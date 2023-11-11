@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<!-- Bootstrap CSS -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+			crossorigin="anonymous"
+		/>
+		<link
+			href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./css/style.css" />
+
+		<title>小约翰可汗的签名</title>
+	</head>
+	<body>
+		<div class="container">
+			<ul class="nav justify-content-end">
+				<li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="#">主页</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/avatar.html">头像</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/video.html">视频列表</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/chart.html">可视化</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/about.html">关于</a>
+				</li>
+			</ul>
+
+			<div class="card mt-5">
+				<div class="card-header">
+					<div class="row">
+						<h2 class="text-primary text-center">小约翰可汗的个性签名</h2>
+						<div class="col-md-1"></div>
+					</div>
+				</div>
+				<div class="card-body">
+					<div class="table-responsive">
+						<table class="table table-bordered" id="sample_data">
+							<thead>
+								<tr>
+									<th>序号</th>
+									<th>时间</th>
+									<th>签名</th>
+								</tr>
+							</thead>
+							<tbody style="vertical-align: middle"></tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Optional JavaScript; choose one of the two! -->
+
+		<!-- Option 1: Bootstrap Bundle with Popper -->
+
+		<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+			crossorigin="anonymous"
+		></script>
+		<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+		<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+	</body>
+</html>
+
+<script>
+	$(document).ready(function () {
+		$("#sample_data").DataTable({
+			ajax: "http://localhost:3000/api/signs",
+			ordering: false,
+			processing: true,
+			serverSide: true,
+			serverMethod: "GET",
+			order: [],
+			columns: [
+				{
+					data: null,
+					render: function (data, type, row, meta) {
+						return meta.row + 1;
+					},
+					className: "text-center",
+				},
+				{
+					data: "sign_time",
+					render: function (data) {
+						// US English uses month-day-year order
+						var date = new Date(data);
+						var options = {
+							year: "numeric",
+							month: "long",
+							day: "numeric",
+							hour: "numeric",
+							minute: "numeric",
+						};
+						return date.toLocaleDateString("zh-cn", options); // 4/25/2018
+					},
+					className: "text-center",
+				},
+				{
+					data: "sign",
+				},
+			],
+			lengthMenu: [20, 40, 60, 80, 500],
+			pageLength: 20,
+			lengthChange: true,
+			language: {
+				lengthMenu: "每页 _MENU_ 条记录",
+				search: "搜索",
+				paginate: {
+					first: "首页",
+					last: "尾页",
+					next: "下一页",
+					previous: "上一页",
+				},
+				info: "第 _START_ 至 _END_ 项结果，共 _TOTAL_ 项",
+				infoEmpty: "显示第 0 至 0 项结果，共 0 项",
+				infoFiltered: "(由 _MAX_ 项结果过滤)",
+				emptyTable: "没有数据",
+				zeroRecords: "没有匹配结果",
+			},
+		});
+	});
+</script>
