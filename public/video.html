@@ -58,8 +58,6 @@
 									<th>视频标题</th>
 									<th>发布时间</th>
 									<th>视频时长</th>
-									<th>弹幕总数</th>
-									<th>评论总数</th>
 									<th>视频链接</th>
 								</tr>
 							</thead>
@@ -134,17 +132,9 @@
 					className: "text-center",
 				},
 				{
-					data: "pop_num",
-					className: "text-center",
-				},
-				{
-					data: "comment_num",
-					className: "text-center",
-				},
-				{
 					data: "video_url",
 					render: function (data) {
-						return `<a href="${data}">前往观看</a>`;
+						return `<a href="${data}" target="_Blank">前往观看</a>`;
 					},
 					className: "text-center",
 				},

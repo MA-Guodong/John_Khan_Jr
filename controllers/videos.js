@@ -13,7 +13,7 @@ export const getVideos = (req, res) => {
 
     const search_query = search_value ? `WHERE video_title LIKE '%${search_value}%'` : '';
 
-    const video_order = `SELECT id, video_title, video_url, video_cover, release_time, video_duration, pop_num,  comment_num FROM video ${search_query} ORDER BY ${column_name} ${column_sort_order} LIMIT ${start}, ${length}`;
+    const video_order = `SELECT id, video_cover, video_title,  release_time, video_duration, video_url FROM video ${search_query} ORDER BY ${column_name} ${column_sort_order} LIMIT ${start}, ${length}`;
 
     const video_total = `SELECT COUNT(*) AS Total FROM video`;
 
