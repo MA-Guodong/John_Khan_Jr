@@ -24,6 +24,6 @@ pool.getConnection((err, connection) => {
     pool.releaseConnection(connection); // 释放连接，以便下次使用
 });
 
-app.listen(3030, () => {
+app.listen(3000, () => {
     console.log("Server is listening on port 3000");
 });
