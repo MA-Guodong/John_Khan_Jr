@@ -1,4 +1,3 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900& display=swap");
 
 * {
@@ -140,3 +139,70 @@ body {
         transition-delay:calc(0.15s * var(--i));
     }
 }
+/* NavBar结束 */
+
+
+
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, .1);
+    backdrop-filter: blur(50px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.social-icons,
+.footer-nav {
+    display: flex;
+    align-items: center;
+}
+
+.social-icons a,
+.footer-nav a {
+    margin-right: 10px;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.footer-nav a:hover {
+    color: #666;
+}
+
+.social-icons .icon {
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.social-icons .icon:hover {
+    color: #ffffff;
+}
+
+footer .copyright {
+    font-size: 12px;
+}
+
+.copyright span {
+    text-transform: uppercase;
+    opacity: .4;
+    font-weight: 400;
+}
+/* Footer 结束 */
+
+
