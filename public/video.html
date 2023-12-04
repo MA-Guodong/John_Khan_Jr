@@ -17,30 +17,32 @@
 			href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css"
 			rel="stylesheet"
 		/>
+		<link
+			href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+			rel="stylesheet"
+		/>
 		<link rel="stylesheet" href="./css/style.css" />
 
 		<title>小约翰可汗视频列表</title>
 	</head>
 	<body>
-		<div class="container">
-			<ul class="nav justify-content-end">
-				<li class="nav-item">
-					<a class="nav-link" href="/index.html">主页</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="/avatar.html">头像</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link active" aria-current="page" href="#">视频列表</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="/chart.html">可视化</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="/about.html">关于</a>
-				</li>
-			</ul>
+		<header class="header">
+			<a href="" class="logo">Eudemonia</a>
+			<input type="checkbox" id="check" />
+			<label for="check" class="icons">
+				<i class="bx bx-menu" id="menu-icon"></i>
+				<i class="bx bx-x" id="close-icon"></i>
+			</label>
 
+			<nav class="navBar">
+				<a href="/index.html" style="--i: 0">主页</a>
+				<a href="/avatar.html" style="--i: 1">头像</a>
+				<a href="#" aria-current="page" style="--i: 2">视频列表</a>
+				<a href="/chart.html" style="--i: 3">可视化</a>
+				<a href="/about.html" style="--i: 4">关于</a>
+			</nav>
+		</header>
+		<div class="container">
 			<div class="card mt-5">
 				<div class="card-header">
 					<div class="row">
