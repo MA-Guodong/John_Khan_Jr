@@ -33,3 +33,24 @@ export const getCharts = (req, res) => {
 
     });
 };
+
+export const getDateCounts = (req, res) => {
+
+    const dateCounts = `SELECT TIMESTAMPDIFF(SECOND, release_time, CURRENT_TIMESTAMP) 
+                        AS date_counts
+                        FROM video
+                        ORDER BY release_time DESC
+                        LIMIT 1;`
+
+    pool.query(dateCounts, (error, results) => {
+
+        if (error) {
+            console.log(error);
+            res.status(500).send(error);
+        }
+        else {
+            res.status(200).json(results);
+        }
+
+    });
+};
