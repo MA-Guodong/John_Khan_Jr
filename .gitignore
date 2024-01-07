@@ -1,3 +1,12 @@
 /.DS_Store
-/node_modules
+/John_Khan_Jr_Nodejs_MySQL/node_modules
 public/.DS_Store
+/.vscode
+/John_Khan_Jr_Python_Projects_MySQL/__pycache__
+/John_Khan_Jr_Python_Projects_MySQL_Videos/__pycache__
+John_Khan_Jr_Nodejs_MySQL/.DS_Store
+John_Khan_Jr_Nodejs_MySQL/controllers/.DS_Store
+John_Khan_Jr_Nodejs_MySQL/public/.DS_Store
+John_Khan_Jr_Nodejs_MySQL/public/images/.DS_Store
+John_Khan_Jr_Python_Projects_MySQL_Videos/.DS_Store
+John_Khan_Jr_Python_Projects_MySQL/.DS_Store

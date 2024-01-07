@@ -1,0 +1,2 @@
+# John_Khan_Jr_Python_Projects_MySQL
+这是一个python脚本用于爬取up主小约翰可汗更新的视频数据，将数据存入到MySQL数据库中
