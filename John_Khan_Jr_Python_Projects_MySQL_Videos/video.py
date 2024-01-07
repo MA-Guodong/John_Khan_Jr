@@ -58,7 +58,6 @@ def get_wbi_keys():
 
 img_key, sub_key = get_wbi_keys()
 
-
 # 定义一个函数，用于获取签名后的查询参数
 def get_query( **parameters: dict):
     """
@@ -75,7 +74,6 @@ def get_query( **parameters: dict):
     # 将签名后的参数转换为URL编码
     query = urllib.parse.urlencode(signed_params)
     return query
-
 
 # 将时间戳解析为固定格式
 def getTime(time):  
@@ -106,7 +104,6 @@ def get_info():
 # 打印签名和头像url
 print(get_info())
 
-
 def read_mysql_Video(cursor):
     cursor.execute("SELECT * FROM video ORDER BY release_time DESC")
     data = cursor.fetchone()
@@ -122,7 +119,6 @@ def write_mysql_Video(row):
         # 执行SQL语句并存储结果
         um.cursor.execute(sql, row)
 
-
 def video_main():
 
     video_title, video_url, video_cover, release_time, video_duration = get_info()
@@ -135,7 +131,6 @@ def video_main():
         write_mysql_Video(row)
     else:
         pass
-
 
 if __name__ == '__main__':
     video_main()
