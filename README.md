@@ -39,7 +39,7 @@
 
 ## 🌟 John_Khan_Jr_Python_Projects_CSV
 
-这是一个python脚本用于爬取up主小约翰可汗的个性签名和头像，将数据存入到CSV文件中
+这是一个python脚本用于爬取up主小约翰可汗的个性签名和头像，将数据存入到CSV文件中。
 
 ****
 
@@ -47,7 +47,8 @@
 
 ## 🌟 John_Khan_Jr_Python_Projects_MySQL
 
-这是一个python脚本用于爬取up主小约翰可汗的个性签名和头像，将数据存入到MySQL数据库中
+这是一个python脚本用于爬取up主小约翰可汗的个性签名和头像，将数据存入到MySQL数据库中。
+在服务器中部署时被设置了每15分钟执行一次，这样就可以最大可能的准时获取小约翰更新的签名和头像内容。
 
 ****
 
@@ -56,3 +57,6 @@
 ## 🌟 John_Khan_Jr_Python_Projects_MySQL_Videos
 
 这是一个python脚本用于爬取up主小约翰可汗更新的视频数据，将数据存入到MySQL数据库中
+这里将获取视频的代码独立出来是为爬取视频信息时会遇一些问题，可能会导致`John_Khan_Jr_Python_Projects_MySQL`无法正常执行，所以在部署的时候尽量分开，这样会减少一些问题。另外，这样操作以后，`John_Khan_Jr_Python_Projects_MySQL_Videos`设置定时执行的次数就会减少，比如设置每天执行一次，从而减轻服务器的压力，也会降低被风控的风险。
+
+****
