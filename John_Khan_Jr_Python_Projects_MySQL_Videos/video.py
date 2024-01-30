@@ -1,12 +1,14 @@
 #!/usr/bin python3
-from pathlib import Path
-import requests
-from functools import reduce
-from hashlib import md5
-import urllib.parse
 import time
-from datetime import datetime  # 导入时间解析模块
-from pymysql_comm import UsingMysql, get_connection
+import base64
+import requests
+import urllib.parse
+
+from hashlib import md5
+from functools import reduce
+from datetime import datetime
+from pymysql_comm import UsingMysql
+from pymysql_comm import get_connection
 
 cursor = get_connection().cursor()
 
@@ -58,6 +60,7 @@ def get_wbi_keys():
 
 img_key, sub_key = get_wbi_keys()
 
+
 # 定义一个函数，用于获取签名后的查询参数
 def get_query( **parameters: dict):
     """
@@ -75,16 +78,22 @@ def get_query( **parameters: dict):
     query = urllib.parse.urlencode(signed_params)
     return query
 
+
 # 将时间戳解析为固定格式
 def getTime(time):  
     return datetime.fromtimestamp(time).strftime("%Y-%m-%d %H:%M:%S")
 
 def get_info():
     # 定义头部
-    headers = {"User-Agent": "Mozilla/5.0", "Referer": "https://www.bilibili.com"}
+    headers = {
+        "User-Agent": "Mozilla/5.0", "Referer": "https://www.bilibili.com",
+        "Cookie": "buvid_fp_plain=undefined; buvid4=89A99599-3637-8AE4-38BC-608777A0F78670328-022062315-Ara1Z35kYaz7Y%2BxY7JjRNA%3D%3D; hit-new-style-dyn=1; i-wanna-go-back=-1; b_ut=5; CURRENT_FNVAL=4048; CURRENT_PID=893ab6a0-cd69-11ed-aa15-3521daab8cec; DedeUserID=3493295516813806; DedeUserID__ckMd5=dede1b4ac66e1815; FEED_LIVE_VERSION=V_SIDE_CARD_REFRESH; buvid3=42F67FD4-3A36-417B-66D9-11185C918C2831240infoc; b_nut=1693917231; _uuid=677496103-2FA3-103E7-CE101-1783CD642D6729768infoc; hit-dyn-v2=1; enable_web_push=DISABLE; header_theme_version=CLOSE; LIVE_BUVID=AUTO8016996140243849; fingerprint=3c23453eae35f77711ed950265ae34d9; rpdid=|(~u|)umk~R0J'u~|JY~|m)l; CURRENT_QUALITY=120; bili_ticket=eyJhbGciOiJIUzI1NiIsImtpZCI6InMwMyIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDQ4OTI4MTYsImlhdCI6MTcwNDYzMzU1NiwicGx0IjotMX0.eZL1DMl9YnzXzTEFULfUZgpaSad8VVGC0iXRJlbqmjE; bili_ticket_expires=1704892756; SESSDATA=0bde97f6%2C1720358413%2C3848d%2A11CjAEFn3NKGTiPUhKcGXoNprXvH6jNuAbHabqSZS-84CK6yUeyVF-yf9QYHAH7LaWUp4SVm9CZ0FqaE9rZDBDeXJtbHlTYVgwX1ZyVUpQb2wzcVRrR0hHbWlScFY3b1dhVGhJLWRiWXdWV3pDbThob0llYWlxelJfU3JhTHk2cXJOYVFsNDItei13IIEC; bili_jct=3c34d72081b36d62e1e2234bd77ea85b; bsource=search_baidu; buvid_fp=3c23453eae35f77711ed950265ae34d9; sid=5k8ilyjx; PVID=2; bp_video_offset_3493295516813806=884801617039196242; innersign=0; b_lsid=C5D1EFEE_18CF1688BB1; home_feed_column=5; browser_resolution=2048-1134"
+        
+        }
     # 定义mid
-    query = get_query(mid='23947287', ps=1, pn=1, )
+    query = get_query(mid='23947287', ps=1, pn=1)
     url_getvideo = f'https://api.bilibili.com/x/space/wbi/arc/search?{query}'
+    # print(url_getvideo)
 
     try:
         videoinfo = requests.get(url_getvideo,headers=headers).json() #  获取当前页视频的信息
@@ -102,7 +111,8 @@ def get_info():
     return video_title, video_url, video_cover, release_time, video_duration
 
 # 打印签名和头像url
-print(get_info())
+# print(get_info())
+
 
 def read_mysql_Video(cursor):
     cursor.execute("SELECT * FROM video ORDER BY release_time DESC")
@@ -133,4 +143,9 @@ def video_main():
         pass
 
 if __name__ == '__main__':
-    video_main()
+    for i in range(1, 100):
+        video_main()
+        print(f"第{i}次执行")
+    print("执行100次")
+
+    

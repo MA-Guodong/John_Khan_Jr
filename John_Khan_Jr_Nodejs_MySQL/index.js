@@ -1,3 +1,4 @@
+import cors from "cors";
 import express from "express";
 import singsRoutes from "./routes/signs.js";
 import avatarsRoutes from "./routes/avatar.js";
@@ -5,8 +6,11 @@ import videosRoutes from "./routes/videos.js";
 import chartsRoutes from "./routes/charts.js";
 import { pool } from "./database/databasePool.js";
 
-const app = express();
 
+const app = express();
+// const cors = require("cors");
+
+app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
 app.use("/api/signs", singsRoutes);
