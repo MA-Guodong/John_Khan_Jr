@@ -138,9 +138,10 @@ def check_charts():
 
 # 更新Charts表中当前月份video的记录
 def update_charts():
-    current_month = datetime.now().strftime("%Y-%m")
-    update_query = "UPDATE Charts SET count = count + 1 WHERE chart_month = %s AND type = %s"
-    cursor.execute(update_query, (current_month, 'video'))        
+    with UsingMysql(log_time=False) as um:
+        current_month = datetime.now().strftime("%Y-%m")
+        update_query = "UPDATE Charts SET count = count + 1 WHERE chart_month = %s AND type = %s"
+        um.cursor.execute(update_query, (current_month, 'video'))        
         
 
 # 该函数接收一行数据并将其插入到 MySQL 数据库的 video 表中。
