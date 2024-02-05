@@ -133,9 +133,4 @@ def main():
 
 
 if __name__ == '__main__':
-    
-    current_month = datetime.now().strftime("%Y-%m")
-    check_and_insert_chart(current_month, 'sign')
-    check_and_insert_chart(current_month, 'avatar')
-    print(current_month)
     main()
