@@ -1,0 +1,502 @@
+[
+    {
+        "month": "2021-10",
+        "count": 20,
+        "type": "avatar"
+    },
+    {
+        "month": "2021-11",
+        "count": 39,
+        "type": "avatar"
+    },
+    {
+        "month": "2021-12",
+        "count": 40,
+        "type": "avatar"
+    },
+    {
+        "month": "2022-01",
+        "count": 38,
+        "type": "avatar"
+    },
+    {
+        "month": "2022-02",
+        "count": 32,
+        "type": "avatar"
+    },
+    {
+        "month": "2022-03",
+        "count": 42,
+        "type": "avatar"
+    },
+    {
+        "month": "2022-04",
+        "count": 34,
+        "type": "avatar"
+    },
+    {
+        "month": "2022-05",
+        "count": 44,
+        "type": "avatar"
+    },
+    {
+        "month": "2022-06",
+        "count": 32,
+        "type": "avatar"
+    },
+    {
+        "month": "2022-07",
+        "count": 31,
+        "type": "avatar"
+    },
+    {
+        "month": "2022-08",
+        "count": 23,
+        "type": "avatar"
+    },
+    {
+        "month": "2022-09",
+        "count": 22,
+        "type": "avatar"
+    },
+    {
+        "month": "2022-10",
+        "count": 20,
+        "type": "avatar"
+    },
+    {
+        "month": "2022-11",
+        "count": 23,
+        "type": "avatar"
+    },
+    {
+        "month": "2022-12",
+        "count": 14,
+        "type": "avatar"
+    },
+    {
+        "month": "2023-01",
+        "count": 12,
+        "type": "avatar"
+    },
+    {
+        "month": "2023-02",
+        "count": 13,
+        "type": "avatar"
+    },
+    {
+        "month": "2023-03",
+        "count": 19,
+        "type": "avatar"
+    },
+    {
+        "month": "2023-04",
+        "count": 14,
+        "type": "avatar"
+    },
+    {
+        "month": "2023-05",
+        "count": 16,
+        "type": "avatar"
+    },
+    {
+        "month": "2023-06",
+        "count": 14,
+        "type": "avatar"
+    },
+    {
+        "month": "2023-07",
+        "count": 16,
+        "type": "avatar"
+    },
+    {
+        "month": "2023-08",
+        "count": 12,
+        "type": "avatar"
+    },
+    {
+        "month": "2023-09",
+        "count": 8,
+        "type": "avatar"
+    },
+    {
+        "month": "2023-10",
+        "count": 8,
+        "type": "avatar"
+    },
+    {
+        "month": "2023-11",
+        "count": 7,
+        "type": "avatar"
+    },
+    {
+        "month": "2023-12",
+        "count": 1,
+        "type": "avatar"
+    },
+    {
+        "month": "2024-02",
+        "count": 1,
+        "type": "avatar"
+    },
+    {
+        "month": "2021-05",
+        "count": 44,
+        "type": "sign"
+    },
+    {
+        "month": "2021-06",
+        "count": 38,
+        "type": "sign"
+    },
+    {
+        "month": "2021-07",
+        "count": 80,
+        "type": "sign"
+    },
+    {
+        "month": "2021-08",
+        "count": 60,
+        "type": "sign"
+    },
+    {
+        "month": "2021-09",
+        "count": 61,
+        "type": "sign"
+    },
+    {
+        "month": "2021-10",
+        "count": 78,
+        "type": "sign"
+    },
+    {
+        "month": "2021-11",
+        "count": 54,
+        "type": "sign"
+    },
+    {
+        "month": "2021-12",
+        "count": 59,
+        "type": "sign"
+    },
+    {
+        "month": "2022-01",
+        "count": 67,
+        "type": "sign"
+    },
+    {
+        "month": "2022-02",
+        "count": 49,
+        "type": "sign"
+    },
+    {
+        "month": "2022-03",
+        "count": 70,
+        "type": "sign"
+    },
+    {
+        "month": "2022-04",
+        "count": 63,
+        "type": "sign"
+    },
+    {
+        "month": "2022-05",
+        "count": 61,
+        "type": "sign"
+    },
+    {
+        "month": "2022-06",
+        "count": 50,
+        "type": "sign"
+    },
+    {
+        "month": "2022-07",
+        "count": 57,
+        "type": "sign"
+    },
+    {
+        "month": "2022-08",
+        "count": 34,
+        "type": "sign"
+    },
+    {
+        "month": "2022-09",
+        "count": 33,
+        "type": "sign"
+    },
+    {
+        "month": "2022-10",
+        "count": 21,
+        "type": "sign"
+    },
+    {
+        "month": "2022-11",
+        "count": 32,
+        "type": "sign"
+    },
+    {
+        "month": "2022-12",
+        "count": 25,
+        "type": "sign"
+    },
+    {
+        "month": "2023-01",
+        "count": 32,
+        "type": "sign"
+    },
+    {
+        "month": "2023-02",
+        "count": 30,
+        "type": "sign"
+    },
+    {
+        "month": "2023-03",
+        "count": 33,
+        "type": "sign"
+    },
+    {
+        "month": "2023-04",
+        "count": 27,
+        "type": "sign"
+    },
+    {
+        "month": "2023-05",
+        "count": 26,
+        "type": "sign"
+    },
+    {
+        "month": "2023-06",
+        "count": 25,
+        "type": "sign"
+    },
+    {
+        "month": "2023-07",
+        "count": 16,
+        "type": "sign"
+    },
+    {
+        "month": "2023-08",
+        "count": 22,
+        "type": "sign"
+    },
+    {
+        "month": "2023-09",
+        "count": 11,
+        "type": "sign"
+    },
+    {
+        "month": "2023-10",
+        "count": 18,
+        "type": "sign"
+    },
+    {
+        "month": "2023-11",
+        "count": 12,
+        "type": "sign"
+    },
+    {
+        "month": "2023-12",
+        "count": 2,
+        "type": "sign"
+    },
+    {
+        "month": "2024-02",
+        "count": 1,
+        "type": "sign"
+    },
+    {
+        "month": "2020-11",
+        "count": 1,
+        "type": "video"
+    },
+    {
+        "month": "2020-12",
+        "count": 3,
+        "type": "video"
+    },
+    {
+        "month": "2021-01",
+        "count": 5,
+        "type": "video"
+    },
+    {
+        "month": "2021-02",
+        "count": 4,
+        "type": "video"
+    },
+    {
+        "month": "2021-03",
+        "count": 4,
+        "type": "video"
+    },
+    {
+        "month": "2021-04",
+        "count": 5,
+        "type": "video"
+    },
+    {
+        "month": "2021-05",
+        "count": 3,
+        "type": "video"
+    },
+    {
+        "month": "2021-06",
+        "count": 5,
+        "type": "video"
+    },
+    {
+        "month": "2021-07",
+        "count": 5,
+        "type": "video"
+    },
+    {
+        "month": "2021-08",
+        "count": 4,
+        "type": "video"
+    },
+    {
+        "month": "2021-09",
+        "count": 5,
+        "type": "video"
+    },
+    {
+        "month": "2021-10",
+        "count": 5,
+        "type": "video"
+    },
+    {
+        "month": "2021-11",
+        "count": 8,
+        "type": "video"
+    },
+    {
+        "month": "2021-12",
+        "count": 6,
+        "type": "video"
+    },
+    {
+        "month": "2022-01",
+        "count": 5,
+        "type": "video"
+    },
+    {
+        "month": "2022-02",
+        "count": 4,
+        "type": "video"
+    },
+    {
+        "month": "2022-03",
+        "count": 6,
+        "type": "video"
+    },
+    {
+        "month": "2022-04",
+        "count": 4,
+        "type": "video"
+    },
+    {
+        "month": "2022-05",
+        "count": 5,
+        "type": "video"
+    },
+    {
+        "month": "2022-06",
+        "count": 6,
+        "type": "video"
+    },
+    {
+        "month": "2022-07",
+        "count": 6,
+        "type": "video"
+    },
+    {
+        "month": "2022-08",
+        "count": 3,
+        "type": "video"
+    },
+    {
+        "month": "2022-09",
+        "count": 4,
+        "type": "video"
+    },
+    {
+        "month": "2022-10",
+        "count": 5,
+        "type": "video"
+    },
+    {
+        "month": "2022-11",
+        "count": 6,
+        "type": "video"
+    },
+    {
+        "month": "2022-12",
+        "count": 5,
+        "type": "video"
+    },
+    {
+        "month": "2023-01",
+        "count": 3,
+        "type": "video"
+    },
+    {
+        "month": "2023-02",
+        "count": 4,
+        "type": "video"
+    },
+    {
+        "month": "2023-03",
+        "count": 3,
+        "type": "video"
+    },
+    {
+        "month": "2023-04",
+        "count": 4,
+        "type": "video"
+    },
+    {
+        "month": "2023-05",
+        "count": 3,
+        "type": "video"
+    },
+    {
+        "month": "2023-06",
+        "count": 4,
+        "type": "video"
+    },
+    {
+        "month": "2023-07",
+        "count": 3,
+        "type": "video"
+    },
+    {
+        "month": "2023-08",
+        "count": 5,
+        "type": "video"
+    },
+    {
+        "month": "2023-09",
+        "count": 3,
+        "type": "video"
+    },
+    {
+        "month": "2023-10",
+        "count": 2,
+        "type": "video"
+    },
+    {
+        "month": "2023-11",
+        "count": 3,
+        "type": "video"
+    },
+    {
+        "month": "2023-12",
+        "count": 2,
+        "type": "video"
+    },
+    {
+        "month": "2024-01",
+        "count": 2,
+        "type": "video"
+    }
+]

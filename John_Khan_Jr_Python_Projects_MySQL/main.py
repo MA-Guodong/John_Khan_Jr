@@ -1,7 +1,8 @@
 #!/usr/bin python3
-from pathlib import Path
-import requests
 import time
+import requests
+from pathlib import Path
+from datetime import datetime
 from pymysql_comm import UsingMysql, get_connection
 
 cursor = get_connection().cursor()
@@ -30,7 +31,6 @@ def get_info():
 
 # 打印签名和头像url
 print(get_info())
-
 
 
 def read_mysql_Sign(cursor):
@@ -63,6 +63,23 @@ def write_mysql_Avatar(row):
         sql_avatar = "INSERT INTO Avatar (avatar_time, img_file_path) VALUES (%s, %s)"
         um.cursor.execute(sql_avatar, row)
 
+# 检查Charts表中是否有当前月份sign & avatar的记录，如果没有则新建一条
+def check_and_insert_chart(chart_month, chart_type):
+    with UsingMysql(log_time=False) as um:
+        query = "SELECT chart_month, type FROM Charts WHERE chart_month = %s AND type = %s"
+        um.cursor.execute(query, (chart_month, chart_type))
+        result = um.cursor.fetchone()
+        if result is None:
+            insert_query = "INSERT INTO Charts (chart_month, count, type) VALUES (%s, %s, %s)"
+            um.cursor.execute(insert_query, (chart_month, 0, chart_type))
+
+
+# 更新Charts表中当前月份sign & avatar的记录
+def update_chart_count(chart_month, chart_type):
+    with UsingMysql(log_time=False) as um:
+        update_query = "UPDATE Charts SET count = count + 1 WHERE chart_month = %s AND type = %s"
+        um.cursor.execute(update_query, (chart_month, chart_type))
+
 
 # 函数：下载图片并保存到路径
 def download_img(avatar_url, image_path):
@@ -73,7 +90,9 @@ def download_img(avatar_url, image_path):
 
 
 def main():
-
+    current_month = datetime.now().strftime("%Y-%m")
+    check_and_insert_chart(current_month, 'sign')
+    check_and_insert_chart(current_month, 'avatar')
     sign_text, avatar_url, file_name = get_info()
     sign_first_line = read_mysql_Sign(cursor)
     if str(sign_first_line[2]) != str(sign_text):
@@ -83,12 +102,14 @@ def main():
         row = [time_update, sign_text]
         # 将这行数据写入mysql
         write_mysql_Sign(row)
+        # 更新Charts表中新增的sign记录
+        update_chart_count(current_month, 'sign')
         # 休眠1秒
         time.sleep(1)
     else:
         pass
 
-    work_path = "/Users/gd/My_Projects/John_Khan_Jr/John_Khan_Jr_Nodejs_MySQL/public/images/"
+    work_path = "/Users/gd/My_Projects/John_Khan_Jr/John_Khan_Jr/John_Khan_Jr_Nodejs_MySQL/public/"
     avatar_first_line = read_mysql_Avatar(cursor)
     if str(avatar_first_line[2]) != str(file_name):
         # 获取当前时间
@@ -101,6 +122,8 @@ def main():
         image_path = work_path + file_name
         # 从url下载图片
         download_img(avatar_url, image_path)
+        # 更新Charts表中新增的avatar记录
+        update_chart_count(current_month, 'avatar')
         # 休眠1秒
         time.sleep(1)
 
@@ -110,4 +133,9 @@ def main():
 
 
 if __name__ == '__main__':
+    
+    current_month = datetime.now().strftime("%Y-%m")
+    check_and_insert_chart(current_month, 'sign')
+    check_and_insert_chart(current_month, 'avatar')
+    print(current_month)
     main()

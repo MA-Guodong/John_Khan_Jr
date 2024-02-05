@@ -10,7 +10,7 @@ async function setup() {
             datasets: [
                 {
                     label: '签名更新',
-                    data: dataTemps.sign_count_new,
+                    data: dataTemps.sign_count,
                     fill: false,
                     borderColor: 'rgba(255, 99, 132, 1)',
                     backgroundColor: 'rgba(255, 99, 132, 0.5)',
@@ -18,7 +18,7 @@ async function setup() {
                 },
                 {
                     label: '头像更新',
-                    data: dataTemps.avatar_count_new,
+                    data: dataTemps.avatar_count,
                     fill: false,
                     borderColor: 'rgba(99, 132, 255, 1)',
                     backgroundColor: 'rgba(99, 132, 255, 0.5)',
@@ -26,7 +26,7 @@ async function setup() {
                 },
                 {
                     label: '视频更新',
-                    data: dataTemps.video_count_new,
+                    data: dataTemps.video_count,
                     fill: false,
                     borderColor: 'rgba(99, 255, 132, 1)',
                     backgroundColor: 'rgba(99, 255, 132, 0.5)',
@@ -38,62 +38,40 @@ async function setup() {
     });
 }
 
+// async函数用于定义异步函数，用于处理异步操作
 async function getData() {
+    // 使用fetch函数获取http://localhost:3000/api/charts的响应
     const response = await fetch('http://localhost:3000/api/charts');
+    // 使用response.json()函数将响应转换为json格式
     const data = await response.json();
+    // // 使用Array.from()函数将data转换为数组
     const rows = Array.from(data);
-    const month_sign = [];
-    const month_avatar = [];
-    const month_video = [];
+    // 定义sign_count、avatar_count、video_count、month_sign、month_avatar、month_video数组
+    const month = [];
     const sign_count = [];
     const avatar_count = [];
     const video_count = [];
 
+    // 遍历rows数组，根据row.type的值，将row.count和row.month分别存入对应的数组中
     for (const row of rows) {
         if (row.type === 'sign') {
             sign_count.push(row.count);
-            month_sign.push(row.month);
+            month.push(row.chart_month);
         } else if (row.type === 'avatar') {
             avatar_count.push(row.count);
-            month_avatar.push(row.month);
+            // month.push(row.chart_month);
         } else if (row.type === 'video') {
             video_count.push(row.count);
-            month_video.push(row.month);
+            // month.push(row.chart_month);
         }
     }
+    console.log(month);
 
-    const month_max = Math.max(month_sign.length, month_avatar.length, month_video.length);
-
-    if (month_max === month_sign.length) {
-        month = month_sign.slice();
-    } else if (month_max === month_avatar.length) {
-        month = month_avatar.slice();
-    } else if (month_max === month_video.length) {
-        month = month_video.slice();
-    }
-
-    const max_length = Math.max(sign_count.length, avatar_count.length, video_count.length);
-
-    const sign_count_new = Array(max_length).fill(0);
-    const avatar_count_new = Array(max_length).fill(0);
-    const video_count_new = Array(max_length).fill(0);
-
-    for (let i = 0; i < max_length; i++) {
-        if (i < sign_count.length) {
-            sign_count_new[i + max_length - sign_count.length] = sign_count[i];
-        }
-        if (i < avatar_count.length) {
-            avatar_count_new[i + max_length - avatar_count.length] = avatar_count[i];
-        }
-        if (i < video_count.length) {
-            video_count_new[i + max_length - video_count.length] = video_count[i];
-        }
-    }
 
     return {
         month,
-        sign_count_new,
-        avatar_count_new,
-        video_count_new
+        sign_count,
+        avatar_count,
+        video_count
     };
 }
