@@ -1,3 +1,6 @@
+.container {
+    margin-bottom: 100px;
+}
 ul {
     list-style-type: none;
     display: inline-block;
@@ -21,3 +24,31 @@ li {
 a:hover {
     color: #000;
 }
+
+/* 页脚样式 */
+  footer {
+    background-color: #ffffff; 
+    color: #818181;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+  }
+
+  footer p {
+    display: inline-block;
+    margin: 5px;
+  }
+
+  /* 链接样式 */
+  footer a {
+    color: #363535;
+    text-decoration: none;
+    margin: 0 5px; 
+  }
+
+  /* 链接悬停样式 */
+  footer a:hover {
+    text-decoration: underline;
+  }
