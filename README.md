@@ -48,7 +48,7 @@
 </table>
 
 <p>
-  <img src="docs/screenshots/mobile-overview.png" alt="移动端总览" width="300" />
+  <img src="John-Khan-Data-Studio/docs/screenshots/mobile-overview.png" alt="移动端总览" width="300" />
 </p>
 
 ## 技术栈
