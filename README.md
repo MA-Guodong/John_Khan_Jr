@@ -1,6 +1,7 @@
 # 小约翰可汗 · 数据档案馆
-
 把一位 UP 主从 2020 年至今的视频、签名与头像，做成一座可以翻阅的档案馆。
+## 参观链接
+**[小约翰可汗·数据档案馆](https://khan.dgweb.top/)**
 
 ![总览页](John-Khan-Data-Studio/docs/screenshots/overview.png)
 
@@ -10,8 +11,6 @@
 
 ---
 
-## 参观链接
-**[小约翰可汗·数据档案馆](https://khan.dgweb.top/)**
 
 ## 目录
 
