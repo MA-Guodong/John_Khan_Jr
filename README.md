@@ -107,9 +107,9 @@ npm run build
 npm start
 ```
 
-> `better-sqlite3` 是原生模块。国内网络如果下载预编译包很慢，按 [DEPLOY.md](DEPLOY.md) 设置 npmmirror 镜像；没有预编译包时安装 `build-essential` 后执行 `npm rebuild better-sqlite3 --build-from-source`。
+> `better-sqlite3` 是原生模块。国内网络如果下载预编译包很慢，按 [DEPLOY.md](John-Khan-Data-Studio/DEPLOY.md) 设置 npmmirror 镜像；没有预编译包时安装 `build-essential` 后执行 `npm rebuild better-sqlite3 --build-from-source`。
 >
-> **CentOS 7 注意**：系统 glibc 2.17 无法运行官方 Node 18/20/22（需要 glibc 2.28+）。请使用 [DEPLOY.md 的 Docker 方案](DEPLOY.md)（已提供 `Dockerfile` 和 `docker-compose.yml`），或升级到 AlmaLinux/Rocky/Ubuntu 后再按常规流程部署。
+> **CentOS 7 注意**：系统 glibc 2.17 无法运行官方 Node 18/20/22（需要 glibc 2.28+）。请使用 [DEPLOY.md 的 Docker 方案](John-Khan-Data-Studio/DEPLOY.md)（已提供 `Dockerfile` 和 `docker-compose.yml`），或升级到 AlmaLinux/Rocky/Ubuntu 后再按常规流程部署。
 
 首次启动会自动建表，并从 `data/seed/*.json` 写入 **268 支视频、1,503 条签名、757 个头像**（截至 2026-10）。
 
@@ -131,9 +131,9 @@ python main.py all                # 签名 + 头像 + 视频
 python main.py videos --backfill  # 首次上线补齐历史视频
 ```
 
-- 完整说明见 [John-Khan-Data-Studio/python/README.md](python/README.md)；
+- 完整说明见 [python/README.md](John-Khan-Data-Studio/python/README.md)；
 - 视频接口被 B 站风控（`-352` / `412`）时，在 `python/.env` 配置 `KHAN_COOKIE`；
-- 宝塔面板从零到上线的完整步骤见 [John-Khan-Data-Studio/DEPLOY.md](DEPLOY.md)。
+- 宝塔面板从零到上线的完整步骤见 [DEPLOY.md](John-Khan-Data-Studio/DEPLOY.md)。
 
 ## 常用脚本
 
@@ -242,7 +242,7 @@ john-khan-data-studio/
 
 ## 部署
 
-完整的宝塔面板部署流程（Node 启动、Nginx 反代、SSL、Python venv、计划任务、MySQL 迁移、备份恢复、故障排查）见 **[John-Khan-Data-Studio/DEPLOY.md](DEPLOY.md)**。
+完整的宝塔面板部署流程（Node 启动、Nginx 反代、SSL、Python venv、计划任务、MySQL 迁移、备份恢复、故障排查）见 **[DEPLOY.md](John-Khan-Data-Studio/DEPLOY.md)**。
 
 最短路径：
 
