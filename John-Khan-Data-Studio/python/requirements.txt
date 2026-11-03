@@ -1,0 +1,3 @@
+requests>=2.31.0,<3
+# CentOS 7 的 Python 3.9 可能链接 OpenSSL 1.0.2，urllib3 2.x 要求 1.1.1+
+urllib3>=1.26,<2

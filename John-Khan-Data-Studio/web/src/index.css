@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --paper: 246 243 236;
+    --paper-deep: 240 236 226;
+    --card: 255 253 249;
+    --card-muted: 249 245 237;
+    --line: 227 221 208;
+    --ink: 28 25 20;
+    --ink-soft: 74 68 59;
+    --muted: 122 114 102;
+    --accent: 166 61 47;
+    --accent-soft: 245 231 225;
+    --seal: 150 52 40;
+    --gold: 176 125 43;
+    --pine: 47 93 80;
+    --indigo: 79 88 148;
+  }
+
+  .dark {
+    --paper: 19 17 15;
+    --paper-deep: 14 13 11;
+    --card: 28 25 21;
+    --card-muted: 34 30 25;
+    --line: 52 47 39;
+    --ink: 238 232 222;
+    --ink-soft: 203 195 181;
+    --muted: 152 143 128;
+    --accent: 219 109 91;
+    --accent-soft: 58 33 28;
+    --seal: 128 48 38;
+    --gold: 212 165 92;
+    --pine: 111 168 150;
+    --indigo: 152 160 212;
+  }
+
+  * {
+    @apply border-line;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-paper font-sans text-ink antialiased;
+    font-feature-settings: 'kern' 1, 'liga' 1;
+  }
+
+  ::selection {
+    background: rgb(var(--accent) / 0.2);
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(var(--accent) / 0.65);
+    outline-offset: 2px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply font-mono text-[10px] font-medium uppercase tracking-[0.24em] text-muted;
+  }
+
+  .surface {
+    @apply rounded-card border border-line bg-card shadow-card;
+  }
+
+  .hairline {
+    @apply h-px w-full bg-line;
+  }
+
+  .prose-khan {
+    @apply text-[15px] leading-[1.85] text-ink-soft;
+  }
+
+  .prose-khan strong {
+    @apply font-medium text-ink;
+  }
+
+  .prose-khan a {
+    @apply text-accent underline decoration-accent/30 underline-offset-4 transition hover:decoration-accent;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .grain {
+    position: relative;
+  }
+
+  .grain::after {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    content: '';
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+/* 细滚动条 */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--muted) / 0.25);
+  border: 3px solid transparent;
+  border-radius: 999px;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--muted) / 0.45);
+  background-clip: content-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
