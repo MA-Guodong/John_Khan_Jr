@@ -2,7 +2,7 @@
 
 把一位 UP 主从 2020 年至今的视频、签名与头像，做成一座可以翻阅的档案馆。
 
-![总览页](docs/screenshots/overview.png)
+![总览页](John-Khan-Data-Studio/docs/screenshots/overview.png)
 
 旧版本是一个「Node.js + MySQL + Bootstrap DataTables」的表格页：能用，但界面朴素、SQL 直接拼接字符串、没有错误处理，数据还因为 latin1 / UTF-8 混用而大面积乱码。
 
@@ -38,12 +38,12 @@
 
 <table>
   <tr>
-    <td><img src="docs/screenshots/videos.png" alt="视频档案" /></td>
-    <td><img src="docs/screenshots/avatars.png" alt="头像长廊" /></td>
+    <td><img src="John-Khan-Data-Studio/docs/screenshots/videos.png" alt="视频档案" /></td>
+    <td><img src="John-Khan-Data-Studio/docs/screenshots/avatars.png" alt="头像长廊" /></td>
   </tr>
   <tr>
-    <td><img src="docs/screenshots/signatures.png" alt="个性签名" /></td>
-    <td><img src="docs/screenshots/dark/overview.png" alt="深色模式" /></td>
+    <td><img src="John-Khan-Data-Studio/docs/screenshots/signatures.png" alt="个性签名" /></td>
+    <td><img src="John-Khan-Data-Studio/docs/screenshots/dark/overview.png" alt="深色模式" /></td>
   </tr>
 </table>
 
@@ -131,9 +131,9 @@ python main.py all                # 签名 + 头像 + 视频
 python main.py videos --backfill  # 首次上线补齐历史视频
 ```
 
-- 完整说明见 [python/README.md](python/README.md)；
+- 完整说明见 [John-Khan-Data-Studio/python/README.md](python/README.md)；
 - 视频接口被 B 站风控（`-352` / `412`）时，在 `python/.env` 配置 `KHAN_COOKIE`；
-- 宝塔面板从零到上线的完整步骤见 [DEPLOY.md](DEPLOY.md)。
+- 宝塔面板从零到上线的完整步骤见 [John-Khan-Data-Studio/DEPLOY.md](DEPLOY.md)。
 
 ## 常用脚本
 
@@ -242,7 +242,7 @@ john-khan-data-studio/
 
 ## 部署
 
-完整的宝塔面板部署流程（Node 启动、Nginx 反代、SSL、Python venv、计划任务、MySQL 迁移、备份恢复、故障排查）见 **[DEPLOY.md](DEPLOY.md)**。
+完整的宝塔面板部署流程（Node 启动、Nginx 反代、SSL、Python venv、计划任务、MySQL 迁移、备份恢复、故障排查）见 **[John-Khan-Data-Studio/DEPLOY.md](DEPLOY.md)**。
 
 最短路径：
 
