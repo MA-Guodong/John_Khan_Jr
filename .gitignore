@@ -26,7 +26,7 @@
 /John-Khan-Data-Studio/*.py[cod]
 /John-Khan-Data-Studio/.pytest_cache/
 
-# ������ʱ������Կ
+# 忽略 .deploy
 .deploy/
 
 /John_Khan_Jr_Nodejs_MySQL/node_modules
