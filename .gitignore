@@ -1,12 +1,35 @@
-/.DS_Store
+/John-Khan-Data-Studio/node_modules/
+/John-Khan-Data-Studio/dist/
+/John-Khan-Data-Studio/.env
+/John-Khan-Data-Studio/.env.local
+
+# 运行时生成
+/John-Khan-Data-Studio/server/data/*.db
+/John-Khan-Data-Studio/server/data/*.db-*
+/John-Khan-Data-Studio/.cache/
+/John-Khan-Data-Studio/.tmp/
+/John-Khan-Data-Studio/.npm-cache/
+/John-Khan-Data-Studio/.chrome-profile/
+.screenshots/
+
+# 系统文件
+/John-Khan-Data-Studio/.DS_Store
+/John-Khan-Data-Studio/Thumbs.db
+
+# Python
+/John-Khan-Data-Studio/python/venv/
+/John-Khan-Data-Studio/python/.venv/
+/John-Khan-Data-Studio/python/.env
+/John-Khan-Data-Studio/python/logs/
+/John-Khan-Data-Studio/python/__pycache__/
+/John-Khan-Data-Studio/python/**/__pycache__/
+/John-Khan-Data-Studio/*.py[cod]
+/John-Khan-Data-Studio/.pytest_cache/
+
+# ������ʱ������Կ
+.deploy/
+
 /John_Khan_Jr_Nodejs_MySQL/node_modules
-public/.DS_Store
 /.vscode
 /John_Khan_Jr_Python_Projects_MySQL/__pycache__
 /John_Khan_Jr_Python_Projects_MySQL_Videos/__pycache__
-John_Khan_Jr_Nodejs_MySQL/.DS_Store
-John_Khan_Jr_Nodejs_MySQL/controllers/.DS_Store
-John_Khan_Jr_Nodejs_MySQL/public/.DS_Store
-John_Khan_Jr_Nodejs_MySQL/public/images/.DS_Store
-John_Khan_Jr_Python_Projects_MySQL_Videos/.DS_Store
-John_Khan_Jr_Python_Projects_MySQL/.DS_Store

@@ -1,0 +1,15 @@
+{
+  "source": "khan.sql",
+  "importedAt": "2026-11-01T07:25:55.860Z",
+  "repairedMojibake": true,
+  "counts": {
+    "videos": 268,
+    "signs": 1503,
+    "avatars": 757
+  },
+  "ignored": {
+    "charts": 219
+  },
+  "duplicateVideoUrls": [],
+  "missingAvatarImages": []
+}

@@ -1,0 +1,33 @@
+{
+  "name": "john-khan-data-studio",
+  "version": "2.0.0",
+  "private": true,
+  "description": "小约翰可汗数据档案馆 — 视频、签名与头像的可视化数据站",
+  "type": "module",
+  "workspaces": [
+    "server",
+    "web"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "dev": "concurrently -n api,web -c cyan,magenta \"npm:dev:server\" \"npm:dev:web\"",
+    "dev:server": "npm run dev -w server",
+    "dev:web": "npm run dev -w web",
+    "build": "npm run build -w web && npm run build -w server",
+    "start": "npm run start -w server",
+    "preview": "npm run build && npm run start",
+    "seed": "npm run seed -w server",
+    "import": "node scripts/import-mysql-dump.mjs",
+    "capture": "node scripts/capture.mjs",
+    "test": "npm run test -w server",
+    "test:python": "cd python && python -m unittest discover -s tests 2>&1",
+    "typecheck": "npm run typecheck -w server && npm run typecheck -w web"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "iconv-lite": "^0.6.3",
+    "playwright-core": "^1.48.0"
+  }
+}

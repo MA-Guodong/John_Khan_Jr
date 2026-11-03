@@ -1,0 +1,49 @@
+# CentOS 7 / glibc 2.17 推荐用这套 Docker 方式运行。
+# 使用前：
+#   cp .env.example .env
+#   mkdir -p server/data
+#   chown -R www:www server/data web/public/images
+#   KHAN_UID=$(id -u www) KHAN_GID=$(id -g www) docker compose up -d --build
+#
+# 如果宿主机 www 的 UID 不是 1000，可以在 .env 里写：
+#   KHAN_UID=1001
+#   KHAN_GID=1001
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: khan-site:latest
+    container_name: khan-site
+    restart: unless-stopped
+    init: true
+    ports:
+      - "127.0.0.1:4000:4000"
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: production
+      HOST: 0.0.0.0
+      PORT: "4000"
+      DATABASE_FILE: /app/server/data/khan.db
+      SEED_DIR: /app/data/seed
+      WEB_DIST: /app/web/dist
+      AVATAR_DIR: /app/web/public/images
+    volumes:
+      # SQLite 与头像都在宿主机上，Python 爬虫直接写这两个目录
+      - ./server/data:/app/server/data:z
+      - ./web/public/images:/app/web/public/images:z
+    user: "${KHAN_UID:-1000}:${KHAN_GID:-1000}"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:4000/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))",
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
