@@ -67,7 +67,7 @@
 
 > 为什么换成原生 `better-sqlite3`？一开始用的是 WASM 版 SQLite，免编译，但它的锁机制和 Python 原生 `sqlite3` 不兼容——爬虫写入时 Node 会读失败。原生驱动使用标准文件锁 + WAL，Python 和 Node 可以同时读写同一个库，这才满足「定时爬虫 + 常驻站点」的场景。
 >
-> 代价是安装时需要预编译包或编译工具；Linux 部署可参考 [DEPLOY.md](DEPLOY.md) 的镜像与编译说明。
+> 代价是安装时需要预编译包或编译工具；Linux 部署可参考 [DEPLOY.md](John-Khan-Data-Studio/DEPLOY.md) 的镜像与编译说明。
 
 数据流：
 
